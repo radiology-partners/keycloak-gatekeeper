@@ -102,11 +102,11 @@ func getTokenInBearer(req *http.Request) (string, error) {
 		return "", ErrSessionNotFound
 	}
 
-    // strip the token if it starts and ends with a single or double quote
-    if  (string(items[1][0]) == `"` && string(items[1][len(items[1])-1]) == `"`) ||
-        (string(items[1][0]) == `'` && string(items[1][len(items[1])-1]) == `'`) {
-        return items[1][1:(len(items[1])-1)], nil
-    }
+	// strip the token if it starts and ends with a single or double quote
+	if	(string(items[1][0]) == `"` && string(items[1][len(items[1])-1]) == `"`) ||
+		(string(items[1][0]) == `'` && string(items[1][len(items[1])-1]) == `'`) {
+		return items[1][1:(len(items[1])-1)], nil
+	}
 
 	return items[1], nil
 }
