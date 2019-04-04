@@ -364,6 +364,9 @@ type Config struct {
 
 	// DisableAllLogging indicates no logging at all
 	DisableAllLogging bool `json:"disable-all-logging" yaml:"disable-all-logging" usage:"disables all logging to stdout and stderr"`
+
+	// IDPHint sets the identity provider hint on the authentication endpoint for Keycloak.
+	IDPHint string `json:"idp-hint" yaml:"idp-hint" usage:"Sets the identity provider hint on the authentication endpoint." env:"IDP_HINT"`
 }
 
 // getVersion returns the proxy version

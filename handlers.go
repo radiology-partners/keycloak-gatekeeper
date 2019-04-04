@@ -85,6 +85,10 @@ func (r *oauthProxy) oauthAuthorizationHandler(w http.ResponseWriter, req *http.
 	}
 
 	authURL := client.AuthCodeURL(req.URL.Query().Get("state"), accessType, "")
+	// Add the IDP Hint if set.
+	if r.config.IDPHint != "" {
+		authURL += "&kc_idp_hint=" + r.config.IDPHint
+	}
 	r.log.Debug("incoming authorization request from client address",
 		zap.String("access_type", accessType),
 		zap.String("auth_url", authURL),

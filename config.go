@@ -47,6 +47,7 @@ func newDefaultConfig() *Config {
 		ForceCookieLookup:             false,
 		HTTPOnlyCookie:                true,
 		Headers:                       make(map[string]string),
+		IDPHint:                       "",
 		LetsEncryptCacheDir:           "./cache/",
 		MatchClaims:                   make(map[string]string),
 		MaxIdleConns:                  100,
